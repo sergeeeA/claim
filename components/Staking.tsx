@@ -61,7 +61,7 @@ export const Staking = () => {
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
-                backgroundColor: "#151515",
+                backgroundColor: "#f7a602",
                 borderRadius: "8px",
                 width: "500px",
                 padding: "20px",

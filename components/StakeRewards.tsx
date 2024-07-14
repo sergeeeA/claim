@@ -21,6 +21,7 @@ export const StakeRewards = () => {
     
     const {
         data: stakedInfo,
+        isLoading: isStakedInfoLoading,
         refetch: refetchStakedInfo,
     } = useReadContract({
         contract: STAKING_CONTRACT,
@@ -38,14 +39,16 @@ export const StakeRewards = () => {
 
     return (
         <div style={{ width: "100%", margin: "20px 0", display: "flex", flexDirection: "column" }}>
-            {!isTokenBalanceLoading && (
-                <p>Wallet Balance: {toEther(BigInt(tokenBalance!.toString()))}</p>
+            {!isTokenBalanceLoading && tokenBalance !== undefined && (
+                <p>Wallet Balance: {toEther(BigInt(tokenBalance.toString()))}</p>
             )}
-            <h2 style={{ marginBottom: "20px"}}>Stake Rewards: {stakedInfo && toEther(BigInt(stakedInfo[1].toString()))}</h2>
+            <h2 style={{ marginBottom: "20px"}}>
+                Stake Rewards: {stakedInfo && !isStakedInfoLoading && stakedInfo[1] !== undefined ? toEther(BigInt(stakedInfo[1].toString())) : 'Loading...'}
+            </h2>
             <TransactionButton
                 transaction={() => (
                     prepareContractCall({
-                        contract:STAKING_CONTRACT,
+                        contract: STAKING_CONTRACT,
                         method: "claimRewards",
                     })
                 )}
@@ -54,6 +57,7 @@ export const StakeRewards = () => {
                     refetchStakedInfo();
                     refetchTokenBalance();
                 }}
+                disabled={isStakedInfoLoading || isTokenBalanceLoading}
                 style={{
                     border: "none",
                     backgroundColor: "#333",
@@ -62,9 +66,12 @@ export const StakeRewards = () => {
                     borderRadius: "10px",
                     cursor: "pointer",
                     width: "100%",
-                    fontSize: "12px"
+                    fontSize: "12px",
+                    opacity: (isStakedInfoLoading || isTokenBalanceLoading) ? 0.5 : 1
                 }}
-            >Claim Rewards</TransactionButton>
+            >
+                Claim Rewards
+            </TransactionButton>
         </div>
     )
 };
