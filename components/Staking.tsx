@@ -61,15 +61,22 @@ export const Staking = () => {
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
-                backgroundColor: "#C8AC53",
+                backgroundColor: "rgba(255, 255, 255, 0.1)",
                 borderRadius: "8px",
                 width: "500px",
                 padding: "20px",
+                border: "4px solid #31322B",
             }}>
+                
                 <ConnectButton
                     client={client}
                     chain={chain}
                 />
+                                <hr style={{
+                    width: "100%",
+                    border: "0.5px solid #C2AC58",
+
+                }}/>
                 <div style={{
                     display: "flex",
                     flexDirection: "row",
@@ -78,7 +85,7 @@ export const Staking = () => {
                     margin: "20px 0",
                     width: "100%"
                 }}>
-                    <h2 style={{ marginRight: "20px"}}>Claim NFTs</h2>
+                    <h2 style={{ marginRight: "20px", color: "#C2AC58"}}>Recruit Dwellers</h2>
                     <TransactionButton
                         transaction={() => (
                             claimTo({
@@ -94,22 +101,25 @@ export const Staking = () => {
                         style={{
                             fontSize: "12px",
                             backgroundColor: "#333",
-                            color: "#fff",
+                            color: "#C2AC58",
                             padding: "10px 20px",
                             borderRadius: "10px",
                         }}
-                    >Claim NFT</TransactionButton>
+                    >Claim Dweller</TransactionButton>
                 </div>
+
                 <hr style={{
                     width: "100%",
-                    border: "1px solid #333"
+                    border: "0.5px solid #C2AC58",
+
                 }}/>
+
                 <div style={{ 
                     margin: "20px 0",
                     width: "100%"
                 }}>
-                    <h2>Owned NFTs</h2>
-                    <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", width: "500px"}}>
+                    <h2 style={{ color: "#C2AC58" }}>Dwellers</h2>
+                    <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", width: "500px", }}>
                         {ownedNFTs && ownedNFTs.length > 0 ? (
                             ownedNFTs.map((nft) => (
                                 <NFTCard
@@ -120,14 +130,15 @@ export const Staking = () => {
                                 />
                             ))
                         ) : (
-                            <p>You own 0 NFTs</p>
+                            <p style={{ color: "#C2AC58" }}>You own 0 NFTs</p>
                         )}
                     </div>
                 </div>
 
                 <hr style={{
                     width: "100%",
-                    border: "1px solid #333"
+                    border: "0.5px solid #C2AC58",
+
                 }}/>
 
             </div>

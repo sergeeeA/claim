@@ -27,7 +27,7 @@ export const NFTCard = ({ nft, refetch, refecthStakedInfo }: OwnedNFTsProps) => 
                     width: "200px"
                 }}
             />
-            <p style={{ margin: "0 10px 10px 10px"}}>{nft.metadata.name}</p>
+            <p style={{ margin: "0 10px 10px 10px", color: "#C2AC58"}}>{nft.metadata.name}</p>
 
             {isModalOpen && (
                 <div style={{
@@ -65,7 +65,7 @@ export const NFTCard = ({ nft, refetch, refecthStakedInfo }: OwnedNFTsProps) => 
                                 }}
                             >Close</button>
                         </div>
-                        <h3 style={{ margin: "10px 0" }}>You about to stake:</h3>
+                        <h3 style={{ margin: "10px 0" }}>Youre about to stake:</h3>
                         <MediaRenderer
                             client={client}
                             src={nft.metadata.image}

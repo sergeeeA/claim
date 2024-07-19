@@ -32,6 +32,11 @@ export default function Home() {
         <img src="beratecAPP.png" alt="BERA TEC Header" style={{ width: "100%", height: "auto" }} />
 
       </div>
+      <div style={{  overflow: "hidden", width: "350px", }}>
+        <img src="pipboy.png" alt="BERA TEC Header" style={{ width: "100%", height: "auto" }} />
+
+      </div>
+      
 
       
       <ConnectEmbed
