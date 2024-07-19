@@ -37,41 +37,5 @@ export const StakeRewards = () => {
         return () => clearInterval(interval);
     }, []);
 
-    return (
-        <div style={{ width: "100%", margin: "20px 0", display: "flex", flexDirection: "column" }}>
-            {!isTokenBalanceLoading && tokenBalance !== undefined && (
-                <p>Wallet Balance: {toEther(BigInt(tokenBalance.toString()))}</p>
-            )}
-            <h2 style={{ marginBottom: "20px"}}>
-                Stake Rewards: {stakedInfo && !isStakedInfoLoading && stakedInfo[1] !== undefined ? toEther(BigInt(stakedInfo[1].toString())) : 'Loading...'}
-            </h2>
-            <TransactionButton
-                transaction={() => (
-                    prepareContractCall({
-                        contract: STAKING_CONTRACT,
-                        method: "claimRewards",
-                    })
-                )}
-                onTransactionConfirmed={() => {
-                    alert("Rewards claimed!")
-                    refetchStakedInfo();
-                    refetchTokenBalance();
-                }}
-                disabled={isStakedInfoLoading || isTokenBalanceLoading}
-                style={{
-                    border: "none",
-                    backgroundColor: "#333",
-                    color: "#fff",
-                    padding: "10px",
-                    borderRadius: "10px",
-                    cursor: "pointer",
-                    width: "100%",
-                    fontSize: "12px",
-                    opacity: (isStakedInfoLoading || isTokenBalanceLoading) ? 0.5 : 1
-                }}
-            >
-                Claim Rewards
-            </TransactionButton>
-        </div>
-    )
+  
 };

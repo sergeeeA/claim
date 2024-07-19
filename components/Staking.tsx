@@ -78,7 +78,7 @@ export const Staking = () => {
                     margin: "20px 0",
                     width: "100%"
                 }}>
-                    <h2 style={{ marginRight: "20px"}}>Claim NFT to Stake</h2>
+                    <h2 style={{ marginRight: "20px"}}>Claim NFTs</h2>
                     <TransactionButton
                         transaction={() => (
                             claimTo({
@@ -124,32 +124,12 @@ export const Staking = () => {
                         )}
                     </div>
                 </div>
+
                 <hr style={{
                     width: "100%",
                     border: "1px solid #333"
                 }}/>
-                <div style={{ width: "100%", margin: "20px 0" }}>
-                    <h2>Staked NFTs</h2>
-                    <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", width: "500px"}}>
-                        {stakedInfo && stakedInfo[0].length > 0 ? (
-                            stakedInfo[0].map((nft: any, index: number) => (
-                                <StakedNFTCard
-                                    key={index}
-                                    tokenId={nft}
-                                    refetchStakedInfo={refetchStakedInfo}
-                                    refetchOwnedNFTs={getOwnedNFTs}
-                                />
-                            ))
-                        ) : (
-                            <p style={{ margin: "20px" }}>No NFTs staked</p>
-                        )}
-                    </div>
-                </div>
-                <hr style={{
-                    width: "100%",
-                    border: "1px solid #333"
-                }}/>
-                <StakeRewards />  
+
             </div>
         );
     }
