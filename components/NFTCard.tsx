@@ -21,14 +21,25 @@ export const NFTCard = ({ nft, refetch, refecthStakedInfo }: OwnedNFTsProps) => 
                 client={client}
                 src={nft.metadata.image}
                 style={{
-                    borderRadius: "10px",
-                    marginBottom: "10px",
-                    height: "200px",
-                    width: "200px"
+                    borderRadius: "5px",
+                    marginBottom: "5px",
+                    height: "150px",
+                    width: "150px"
                 }}
             />
             <p style={{ margin: "0 10px 10px 10px", color: "#C2AC58"}}>{nft.metadata.name}</p>
-
+            <button
+                onClick={() => setIsModalOpen(true)}
+                style={{
+                    border: "none",
+                    backgroundColor: "#333",
+                    color: "#C2AC58",
+                    padding: "10px",
+                    borderRadius: "10px",
+                    cursor: "pointer",
+                    width: "100%"
+                }}
+            >Work</button>
             {isModalOpen && (
                 <div style={{
                     position: "fixed",
@@ -42,7 +53,7 @@ export const NFTCard = ({ nft, refetch, refecthStakedInfo }: OwnedNFTsProps) => 
                     alignItems: "center"
                 }}>
                     <div style={{
-                        minWidth: "300px",
+                        minWidth: "150px",
                         backgroundColor: "#222",
                         padding: "20px",
                         borderRadius: "10px",
@@ -60,16 +71,17 @@ export const NFTCard = ({ nft, refetch, refecthStakedInfo }: OwnedNFTsProps) => 
                                 style={{
                                     border: "none",
                                     backgroundColor: "transparent",
-                                    color: "#fff",
+                                    color: "#C2AC58",
                                     cursor: "pointer"
                                 }}
                             >Close</button>
                         </div>
-                        <h3 style={{ margin: "10px 0" }}>Youre about to stake:</h3>
+                        <h3 style={{ margin: "10px 0", color: "#C2AC58", }}>This Dweller is about to work:</h3>
                         <MediaRenderer
                             client={client}
                             src={nft.metadata.image}
                             style={{
+                                color: "#C2AC58",
                                 borderRadius: "10px",
                                 marginBottom: "10px"
                             }}
@@ -83,8 +95,10 @@ export const NFTCard = ({ nft, refetch, refecthStakedInfo }: OwnedNFTsProps) => 
                                         tokenId: nft.id
                                     })
                                 )}
-                                style={{
-                                    width: "100%"
+                                style={{ 
+                                    width: "100%",
+                                    color: "#C2AC58" ,
+                                    backgroundColor: "#333",
                                 }}
                                 onTransactionConfirmed={() => setIsApproved(true)}
                             >Approve</TransactionButton>
@@ -104,9 +118,11 @@ export const NFTCard = ({ nft, refetch, refecthStakedInfo }: OwnedNFTsProps) => 
                                     refecthStakedInfo();
                                 }}
                                 style={{
-                                    width: "100%"
+                                    color: "#C2AC58",
+                                    width: "100%",
+                                    backgroundColor: "#333",
                                 }}
-                            >Stake</TransactionButton>
+                            >Employ</TransactionButton>
                         )}
                         
                     </div>
