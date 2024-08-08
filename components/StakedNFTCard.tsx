@@ -3,6 +3,7 @@ import { NFT_CONTRACT, STAKING_CONTRACT } from "../utils/contracts";
 import { getNFT } from "thirdweb/extensions/erc721";
 import { client } from "@/app/client";
 import { prepareContractCall } from "thirdweb";
+import styles from './Staking.module.css';
 
 type StakedNFTCardProps = {
     tokenId: bigint;
@@ -27,12 +28,12 @@ export const StakedNFTCard: React.FC<StakedNFTCardProps> = ({ tokenId, refetchSt
                 style={{
                     borderRadius: "10px",
                     marginBottom: "10px",
-                    height: "200px",
-                    width: "200px",
+                    height: "150px",
+                    width: "150px",
                     color: "#C2AC58",
                 }}
             />
-            <p style={{ margin: "0 10px 10px 10px", color: "#C2AC58"}}>{nft?.metadata.name}</p>
+            <p className={styles.Regulartxt}>{nft?.metadata.name}</p>
             <TransactionButton
                 transaction={() => (
                     prepareContractCall({
@@ -47,16 +48,17 @@ export const StakedNFTCard: React.FC<StakedNFTCardProps> = ({ tokenId, refetchSt
                     alert("Withdrawn!");
                 }}
                 style={{
+                    
+                    justifyContent: "center",  
+                    display: "flex",
                     border: "none",
-                    backgroundColor: "#333",
-                    color: "#C2AC58",
-                    padding: "10px",
-                    borderRadius: "10px",
-                    cursor: "pointer",
-                    width: "100%",
-                    fontSize: "12px"
+                    backgroundColor: "transparent",
+                    cursor: `url('/curs.png'), pointer`,
+                     // Use inline-block to center within text-align container
+                    fontSize: "12px",
+                    margin: "0 auto", // Center horizontally if block-level
                 }}
-            >Retire</TransactionButton>
+            ><div className={styles.Button}>RETIRE</div></TransactionButton>
         </div>
     )
 };

@@ -1,15 +1,17 @@
 'use client';
 
+
 import { chain } from "@/app/chain";
 import { client } from "@/app/client";
-import { ConnectButton, TransactionButton, useActiveAccount, useReadContract,  } from "thirdweb/react";
+import { ConnectButton, TransactionButton, useActiveAccount, useReadContract } from "thirdweb/react";
 import { StakeRewards } from "./StakeRewards";
 import { NFT_CONTRACT, STAKING_CONTRACT } from "../utils/contracts";
-import { NFT, } from "thirdweb";
+import { NFT } from "thirdweb";
 import { useEffect, useState } from "react";
 import { claimTo, getNFTs, ownerOf, totalSupply } from "thirdweb/extensions/erc721";
 import { NFTCard } from "./NFTCard";
 import { StakedNFTCard } from "./StakedNFTCard";
+import styles from './Staking.module.css'; // Import the CSS module
 
 
 export const Staking = () => {
@@ -58,33 +60,10 @@ export const Staking = () => {
     
     if(account) {
         return (
-            
-            <div style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                backgroundColor: "rgba(255, 255, 255, 0.1)",
-                borderRadius: "8px",
-                width: "500px",
-                padding: "20px",
-                border: "4px solid #31322B",
-            }}>
-                
-
-                <hr style={{
-                    width: "100%",
-                    border: "0.5px solid #C2AC58",
-
-                }}/>
-                <div style={{
-                    display: "flex",
-                    flexDirection: "row",
-                    alignItems: "center",
-                    justifyContent: "space-between",
-                    margin: "20px 0",
-                    width: "100%"
-                }}>
-                    <h2 style={{ marginRight: "20px", color: "#C2AC58"}}>Recruit Dwellers</h2>
+            <div className={styles.container}>
+                <hr className={styles.divider} />
+                <div className={styles.headerContainer}>
+                    <h2 className={styles.Regulartxt}>RECRUIT DWELLERS</h2>
                     <TransactionButton
                         transaction={() => (
                             claimTo({
@@ -98,28 +77,24 @@ export const Staking = () => {
                             getOwnedNFTs();
                         }}
                         style={{
-                            fontSize: "12px",
-                            backgroundColor: "#333",
+
+                            backgroundColor: "transparent",
                             color: "#C2AC58",
                             padding: "10px 20px",
                             borderRadius: "10px",
-                            
+                            cursor: `url('/curs.png'), pointer`,
                         }}
-                    >Claim Dweller</TransactionButton>
+                    > <div className={styles.Button}>CLAIM DWELLER</div></TransactionButton>
                 </div>
 
-                <hr style={{
-                    width: "100%",
-                    border: "0.5px solid #C2AC58",
-
-                }}/>
+                <hr className={styles.finalDivider}/>
 
                 <div style={{ 
                     margin: "20px 0",
                     width: "100%"
                 }}>
-                    <h2 style={{ color: "#C2AC58" }}>Dwellers</h2>
-                    <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", width: "500px", }}>
+                     <h2 className={styles.Regulartxt}>DWELLERS</h2>
+                     <div className={styles.nftCardContainer}>
                         {ownedNFTs && ownedNFTs.length > 0 ? (
                             ownedNFTs.map((nft) => (
                                 <NFTCard
@@ -130,18 +105,15 @@ export const Staking = () => {
                                 />
                             ))
                         ) : (
-                            <p style={{ color: "#C2AC58" }}>You own 0 Dwellers</p>
+                            <p className={styles.Regulartxt}>You own 0 Dwellers</p>
                         )}
                     </div>
                 </div>
 
-                <hr style={{
-                    width: "100%",
-                    border: "0.5px solid #C2AC58",
+                <hr className={styles.finalDivider}/>
 
-                }}/>
 <div style={{ width: "100%", margin: "20px 0" }}>
-                    <h2 style={{ color: "#C2AC58" }}>Working Dwellers</h2>
+                    <h2 className={styles.Regulartxt}>WORKING DWELLERS</h2>
                     <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", width: "500px"}}>
                         {stakedInfo && stakedInfo[0].length > 0 ? (
                             stakedInfo[0].map((nft: any, index: number) => (
@@ -153,14 +125,11 @@ export const Staking = () => {
                                 />
                             ))
                         ) : (
-                            <p style={{ margin: "20px", color: "#C2AC58" }}>No Dwellers Employed</p>
+                            <p className={styles.Regulartxt}>No Dwellers Employed</p>
                         )}
                     </div>
                 </div>
-                <hr style={{
-                    width: "100%",
-                    border: "1px solid #C2AC58"
-                }}/>
+                <hr className={styles.finalDivider}/>
                 <StakeRewards />  
             </div>
         );

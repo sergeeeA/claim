@@ -1,0 +1,125 @@
+@font-face {
+    font-family: 'Monofonto';
+    src: url('../public/monofonto rg.otf') format('opentype');
+    font-weight: 100; /* Define default font-weight if needed */
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    width: 500px;
+    padding: 20px;
+    border: 4px solid #31322B;
+    cursor: url('../public/curs.png'), auto;
+}
+.staked {
+    color: #C2AC58; /* Base text color */
+    margin: "10px"
+}
+
+.divider {
+    width: 100%;
+    border: 0.5px solid #C2AC58;
+}
+
+.headerContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+   
+    justify-content: space-between;
+    margin: 20px 0;
+    width: 100%;
+}
+
+
+
+.Button {
+    font-size: 12px;
+    color: #C2AC58;
+    padding: 10px 20px;
+    border-radius: 2px;
+    border: none; /* Remove default border */
+    transition: background-color 0.1s ease; /* Smooth transitions for background color */
+    font-Weight: bold;
+    font-family: 'Monofonto', sans-serif; 
+    cursor: url('../public/curs.png'), auto;
+}
+
+@keyframes flicker {
+    0% { box-shadow: 0 0 5px #a3914a; }
+    50% { box-shadow: 0 0 15px #C2AC58; }
+    100% { box-shadow: 0 0 5px #a3914a; }
+}
+
+.Button:hover {
+    color: #000000;
+    background-color: #C2AC58; /* Background color on hover */
+    animation: flicker 0.1s; /* Apply flicker animation */
+    animation-fill-mode: forwards; /* Ensure animation persists */
+}
+
+
+
+
+.nftSection {
+    margin: 20px 0;
+    width: 100%;
+}
+
+
+.nftCardContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 500px;
+    font-family: 'Monofonto', sans-serif; 
+    display: flex;
+    align-items: center;
+}
+
+.Regulartxt {
+    color: #C2AC58;
+    font-weight: 150;
+    font-family: 'Monofonto', sans-serif; 
+    
+}
+.valuetxt {
+    color: #ffffff;
+    font-weight: 150;
+    font-family: 'Monofonto', sans-serif;
+    height: 25px;
+    width: 15%;
+    background: linear-gradient(to bottom,#ffffff, #C2AC58,#a89549,#C2AC58, #ffffff); /* Red to Blue gradient */
+    text-align: center;
+    
+    border-radius: 2px;
+    
+
+}
+
+
+
+.workingDwellersCardContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 500px;
+    font-family: 'Monofonto', sans-serif; 
+    margin: "0 10px 10px 10px"; 
+    color: "#C2AC58"; 
+    align-items: center;
+    display: "flex";
+}
+
+.noDwellersText {
+    margin: 20px;
+    color: #C2AC58;
+}
+
+.finalDivider {
+    width: 100%;
+    border: 1px solid #C2AC58;
+}

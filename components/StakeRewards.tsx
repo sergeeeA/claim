@@ -3,6 +3,7 @@ import { REWARD_TOKEN_CONTRACT, STAKING_CONTRACT } from "../utils/contracts";
 import { prepareContractCall, toEther } from "thirdweb";
 import { useEffect } from "react";
 import { balanceOf } from "thirdweb/extensions/erc721";
+import styles from './Staking.module.css';
 
 export const StakeRewards = () => {
     const account = useActiveAccount();
@@ -50,14 +51,15 @@ export const StakeRewards = () => {
 
             {!isTokenBalanceLoading && tokenBalance !== undefined && (
                 
-                <p>
-                Balance: {toEther(BigInt(tokenBalance.toString()))}
+                <p className={styles.Regulartxt}>
+                BALANCE: <p className={styles.valuetxt}>{toEther(BigInt(tokenBalance.toString()))}</p>
               </p>
             )}
             
-            <p style={{ marginBottom: "20px" , color: "#C2AC58"}}>
-                unclaimed tCAPS: {stakedInfo && !isStakedInfoLoading && stakedInfo[1] !== undefined ? toEther(BigInt(stakedInfo[1].toString())) : 'Loading...'}
+            <p className={styles.Regulartxt}>
+                UNCLAIMED tCAPS: <p className={styles.valuetxt}>{stakedInfo && !isStakedInfoLoading && stakedInfo[1] !== undefined ? toEther(BigInt(stakedInfo[1].toString())) : 'Loading...'}</p>
             </p>
+
             <TransactionButton
                 transaction={() => (
                     prepareContractCall({
@@ -72,19 +74,20 @@ export const StakeRewards = () => {
                 }}
                 disabled={isStakedInfoLoading || isTokenBalanceLoading}
                 style={{
-                    border: "none",
-                    backgroundColor: "#333",
                     color: "#C2AC58",
                     padding: "10px",
-                    borderRadius: "10px",
-                    cursor: "pointer",
-                    width: "100%",
-                    fontSize: "12px",
-                    opacity: (isStakedInfoLoading || isTokenBalanceLoading) ? 0.5 : 1
+                    cursor: `url('/curs.png'), pointer`,
+                    width: "50%",
+                    opacity: (isStakedInfoLoading || isTokenBalanceLoading) ? 0.5 : 1,
+                    backgroundColor: "transparent", // Ensures background color is transparent
+                    margin: "0 auto", // Center horizontally
+                    display: "block" // Ensure block-level for margin auto centering
+                    
                 }}
             >
-                Claim Income
+                <div className={styles.Button}>CLAIM INCOME</div>
             </TransactionButton>
+
         </div>
     )
 };

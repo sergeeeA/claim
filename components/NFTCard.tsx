@@ -4,6 +4,7 @@ import { MediaRenderer, TransactionButton } from "thirdweb/react";
 import { NFT_CONTRACT, STAKING_CONTRACT } from "../utils/contracts";
 import { useState } from "react";
 import { approve } from "thirdweb/extensions/erc721";
+import styles from './Staking.module.css';
 
 type OwnedNFTsProps = {
     nft: NFT;
@@ -21,25 +22,27 @@ export const NFTCard = ({ nft, refetch, refecthStakedInfo }: OwnedNFTsProps) => 
                 client={client}
                 src={nft.metadata.image}
                 style={{
-                    borderRadius: "5px",
-                    marginBottom: "5px",
+                    borderRadius: "10px",
+                    marginBottom: "10px",
                     height: "150px",
                     width: "150px"
                 }}
             />
-            <p style={{ margin: "0 10px 10px 10px", color: "#C2AC58"}}>{nft.metadata.name}</p>
+            <p style={{ margin: "0 10px 10px 10px", color: "#C2AC58", justifyContent: "center",  display: "flex",}}>{nft.metadata.name}</p>
+
             <button
                 onClick={() => setIsModalOpen(true)}
                 style={{
                     border: "none",
-                    backgroundColor: "#333",
-                    color: "#C2AC58",
-                    padding: "10px",
-                    borderRadius: "10px",
-                    cursor: "pointer",
-                    width: "100%"
+                    backgroundColor: "transparent",
+                    cursor: `url('/curs.png'), pointer`,
+                    width: "100%",
+                    justifyContent: "center",  
+                    display: "flex",
+                    
                 }}
-            >Work</button>
+            ><div className={styles.Button}>WORK</div></button>
+       
             {isModalOpen && (
                 <div style={{
                     position: "fixed",
@@ -74,7 +77,7 @@ export const NFTCard = ({ nft, refetch, refecthStakedInfo }: OwnedNFTsProps) => 
                                     color: "#C2AC58",
                                     cursor: "pointer"
                                 }}
-                            >Close</button>
+                            ><div className={styles.Button}>Close</div></button>
                         </div>
                         <h3 style={{ margin: "10px 0", color: "#C2AC58", }}>This Dweller is about to work:</h3>
                         <MediaRenderer
@@ -97,11 +100,12 @@ export const NFTCard = ({ nft, refetch, refecthStakedInfo }: OwnedNFTsProps) => 
                                 )}
                                 style={{ 
                                     width: "100%",
-                                    color: "#C2AC58" ,
-                                    backgroundColor: "#333",
+ 
+                                    backgroundColor: "transparent",
+                                    cursor: `url('/curs.png'), pointer`,
                                 }}
                                 onTransactionConfirmed={() => setIsApproved(true)}
-                            >Approve</TransactionButton>
+                            ><div className={styles.Button}>Approve</div></TransactionButton>
                         ) : (
                             <TransactionButton
                                 transaction={() => (
@@ -112,17 +116,17 @@ export const NFTCard = ({ nft, refetch, refecthStakedInfo }: OwnedNFTsProps) => 
                                     })
                                 )}
                                 onTransactionConfirmed={() => {
-                                    alert("Staked!");
+                                    alert("Working!");
                                     setIsModalOpen(false);
                                     refetch();
                                     refecthStakedInfo();
                                 }}
                                 style={{
-                                    color: "#C2AC58",
+                                    cursor: `url('/curs.png'), pointer`,
                                     width: "100%",
-                                    backgroundColor: "#333",
+                                    backgroundColor: "transparent",
                                 }}
-                            >Employ</TransactionButton>
+                            ><div className={styles.Button}>Employ</div></TransactionButton>
                         )}
                         
                     </div>
