@@ -56,7 +56,7 @@ export default function Home() {
             accentText: "#C2AC58",
             accentButtonBg: "#C2AC58",
             modalBg: "#c2ad581f",
-            dropdownBg: "#c2ad581f",
+ 
             borderColor: "#C2AC58",
             separatorLine: "#C2AC58",
             success: "#C2AC58",
@@ -70,8 +70,7 @@ export default function Home() {
             secondaryButtonHoverBg: "#C2AC58",
             secondaryButtonText: "#C2AC58",
             connectedButtonBgHover: "#C2AC58",
-            walletSelectorButtonHoverBg:
-              "#C2AC58",
+
             secondaryIconColor: "#C2AC58",
             secondaryIconHoverColor: "#000000",
             secondaryIconHoverBg: "#C2AC58",
@@ -106,7 +105,7 @@ export default function Home() {
             accentText: "#C2AC58",
             accentButtonBg: "#C2AC58",
             modalBg: "#c2ad581f",
-            dropdownBg: "#c2ad581f",
+
             borderColor: "#C2AC58",
             separatorLine: "#C2AC58",
             success: "#C2AC58",
@@ -120,8 +119,7 @@ export default function Home() {
             secondaryButtonHoverBg: "#C2AC58",
             secondaryButtonText: "#C2AC58",
             connectedButtonBgHover: "#C2AC58",
-            walletSelectorButtonHoverBg:
-              "#C2AC58",
+
             secondaryIconColor: "#C2AC58",
             secondaryIconHoverColor: "#000000",
             secondaryIconHoverBg: "#C2AC58",
