@@ -52,7 +52,7 @@ export const NFTCard = ({ nft, refetch, refecthStakedInfo }: OwnedNFTsProps) => 
                     height: "150px",
                     width: "150px",
                     overflow: "hidden", // Ensure the image doesn't overflow
-                    transition: "transform 0.07s ease-out"
+                    transition: "transform 0.1s ease-out"
                 }}
                 onMouseMove={(e) => handleMouseMove(e, mediaRef)}
                 onMouseLeave={() => handleMouseLeave(mediaRef)}
