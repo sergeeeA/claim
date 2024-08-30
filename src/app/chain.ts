@@ -1,4 +1,4 @@
 import { defineChain } from "thirdweb";
 // import { baseSepolia } from "thirdweb/chains";
 
-export const chain = defineChain( 80084 );
+export const chain = defineChain(80084);

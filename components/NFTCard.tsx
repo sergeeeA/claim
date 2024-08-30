@@ -41,18 +41,19 @@ export const NFTCard = ({ nft, refetch, refecthStakedInfo }: OwnedNFTsProps) => 
 
     return (
         <div
-            style={{ margin: "10px" }}
+            style={{ margin: "10px",  }}
             className={styles.nftCard}
         >
             <div
                 ref={mediaRef}
                 style={{
+       
                     borderRadius: "10px",
                     marginBottom: "10px",
                     height: "150px",
                     width: "150px",
                     overflow: "hidden", // Ensure the image doesn't overflow
-                    transition: "transform 0.1s ease-out"
+                    transition: "transform 0.15s ease-out"
                 }}
                 onMouseMove={(e) => handleMouseMove(e, mediaRef)}
                 onMouseLeave={() => handleMouseLeave(mediaRef)}
@@ -88,19 +89,21 @@ export const NFTCard = ({ nft, refetch, refecthStakedInfo }: OwnedNFTsProps) => 
 
             {isModalOpen && (
                 <div style={{
+                    zIndex: "5",
                     position: "fixed",
                     top: 0,
                     left: 0,
                     width: "100%",
                     height: "100%",
-                    backgroundColor: "rgba(0, 0, 0, 0.5)",
+                    backgroundColor: "#07070750",
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center"
                 }}>
                     <div style={{
                         minWidth: "150px",
-                        backgroundColor: "#222",
+                        backgroundColor: "#50472594",
+                        border: "2px solid #c2ad58c4",
                         padding: "20px",
                         borderRadius: "10px",
                         display: "flex",
@@ -108,6 +111,7 @@ export const NFTCard = ({ nft, refetch, refecthStakedInfo }: OwnedNFTsProps) => 
                         alignItems: "center"
                     }}>
                         <div style={{
+                        
                             display: "flex",
                             justifyContent: "flex-end",
                             width: "100%"
@@ -121,11 +125,11 @@ export const NFTCard = ({ nft, refetch, refecthStakedInfo }: OwnedNFTsProps) => 
                                     cursor: "pointer"
                                 }}
                             >
-                                <div className={styles.Button}>Close</div>
+                                <div className={styles.Button}>CLOSE</div>
                             </button>
                         </div>
                         <h3 style={{ margin: "10px 0", color: "#C2AC58" }}>
-                            This Dweller is about to work:
+                            Let this dweller work:
                         </h3>
                         <div
                             ref={modalMediaRef}
@@ -167,7 +171,7 @@ export const NFTCard = ({ nft, refetch, refecthStakedInfo }: OwnedNFTsProps) => 
                                 }}
                                 onTransactionConfirmed={() => setIsApproved(true)}
                             >
-                                <div className={styles.Button}>Approve</div>
+                                <div className={styles.Button}>APPROVE</div>
                             </TransactionButton>
                         ) : (
                             <TransactionButton
@@ -190,7 +194,7 @@ export const NFTCard = ({ nft, refetch, refecthStakedInfo }: OwnedNFTsProps) => 
                                     backgroundColor: "transparent"
                                 }}
                             >
-                                <div className={styles.Button}>Employ</div>
+                                <div className={styles.Button}>EMPLOY</div>
                             </TransactionButton>
                         )}
 

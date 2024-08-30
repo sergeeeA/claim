@@ -105,7 +105,9 @@ export const Staking = () => {
                                 />
                             ))
                         ) : (
+                            <div>
                             <p className={styles.Regulartxt}>You own 0 Dwellers</p>
+                            </div>
                         )}
                     </div>
                 </div>
@@ -125,7 +127,9 @@ export const Staking = () => {
                                 />
                             ))
                         ) : (
+                            <div>
                             <p className={styles.Regulartxt}>No Dwellers Employed</p>
+                            </div>
                         )}
                     </div>
                 </div>

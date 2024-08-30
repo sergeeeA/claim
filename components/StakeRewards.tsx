@@ -44,7 +44,7 @@ export const StakeRewards = () => {
             
             <h1 style={{ display: "flex", justifyContent: "center", alignItems: "center",  }}>
                 <img
-                    src="tcaps.gif"
+                    src="coinflip.gif"
                     style={{ width: "100px" }} // Adjust width as needed
                 />
             </h1>
