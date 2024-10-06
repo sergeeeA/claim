@@ -125,3 +125,59 @@
     width: 100%;
     border: 1px solid #C2AC58;
 }
+.inputContainer {
+    display: flex;
+    align-items: center;
+}
+
+.inputQuantity {
+    width: 60px;  /* Width of the input */
+    margin-right: 10px;  /* Spacing to the right */
+    border-radius: 5px;  /* Rounded corners */
+    padding: 5px;  /* Inner padding */
+    border: 4px solid #C2AC58;  /* Border color */
+    background-color: transparent;  /* Background color */
+    
+    color: #C2AC58;  /* Text color */
+    font-size: 16px;  /* Font size */
+    font-family: 'Monofonto', sans-serif;  /* Font family */
+    text-align: center;  /* Center the text */
+    transition: border 0.15s ease-in-out;  /* Transition for border on focus */
+}
+
+.inputQuantity:focus {
+    outline: none;  /* Remove default outline */
+    border: 2px solid #C2AC58;
+    color: #C2AC58;  /* Change border color on focus */
+}
+
+.buttoninput {
+    background-color: #c2ad5800;  /* Button background color */
+    color: #C2AC58;  /* Button text color */
+    border: none;  /* No border */
+    border-radius: 5px;  /* Rounded corners */
+    padding: 5px 10px;  /* Padding */
+    cursor: pointer;  /* Pointer cursor on hover */
+    font-family: 'Monofonto', sans-serif;  /* Font family */
+    margin: 0 5px;  /* Spacing between buttons and input */
+}
+
+.buttoninput:hover {
+    background-color: #C2AC58; 
+    color: #000000;  /* Change color on hover */
+    animation: flicker 0.1s; 
+}
+
+.inputQuantity {
+    -moz-appearance: textfield; /* Firefox */
+    -webkit-appearance: none; /* Safari and Chrome */
+    appearance: none; /* Standard */
+}
+
+
+
+.inputQuantity::-webkit-inner-spin-button,
+.inputQuantity::-webkit-outer-spin-button {
+    -webkit-appearance: none; /* Hide the spinner in Chrome/Safari */
+    margin: 0; /* Remove margin */
+}

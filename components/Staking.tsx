@@ -1,6 +1,5 @@
 'use client';
 
-
 import { chain } from "@/app/chain";
 import { client } from "@/app/client";
 import { ConnectButton, TransactionButton, useActiveAccount, useReadContract } from "thirdweb/react";
@@ -13,15 +12,13 @@ import { NFTCard } from "./NFTCard";
 import { StakedNFTCard } from "./StakedNFTCard";
 import styles from './Staking.module.css'; // Import the CSS module
 
-
 export const Staking = () => {
     const account = useActiveAccount();
-
     const [ownedNFTs, setOwnedNFTs] = useState<NFT[]>([]);
-    
+    const [quantity, setQuantity] = useState(1); // State for quantity
+
     const getOwnedNFTs = async () => {
         let ownedNFTs: NFT[] = [];
-
         const totalNFTSupply = await totalSupply({
             contract: NFT_CONTRACT,
         });
@@ -30,7 +27,7 @@ export const Staking = () => {
             start: 0,
             count: parseInt(totalNFTSupply.toString()),
         });
-        
+
         for (let nft of nfts) {
             const owner = await ownerOf({
                 contract: NFT_CONTRACT,
@@ -42,9 +39,9 @@ export const Staking = () => {
         }
         setOwnedNFTs(ownedNFTs);
     };
-    
+
     useEffect(() => {
-        if(account) {
+        if (account) {
             getOwnedNFTs();
         }
     }, [account]);
@@ -57,19 +54,38 @@ export const Staking = () => {
         method: "getStakeInfo",
         params: [account?.address || ""],
     });
-    
-    if(account) {
+
+    if (account) {
         return (
             <div className={styles.container}>
                 <hr className={styles.divider} />
                 <div className={styles.headerContainer}>
                     <h2 className={styles.Regulartxt}>RECRUIT DWELLERS</h2>
+                    <button
+                        className={styles.buttoninput}
+                        onClick={() => setQuantity((prev) => Math.max(1, prev - 1))}  // Decrement
+                    >
+                        -
+                    </button>
+                    <input
+                        type="number"
+                        value={quantity}
+                        onChange={(e) => setQuantity(Number(e.target.value))}
+                        min="1"
+                        className={styles.inputQuantity}  // Apply the style class here
+                    />
+                    <button
+                        className={styles.buttoninput}
+                        onClick={() => setQuantity((prev) => prev + 1)}  // Increment
+                    >
+                        +
+                    </button>
                     <TransactionButton
                         transaction={() => (
                             claimTo({
                                 contract: NFT_CONTRACT,
                                 to: account?.address || "",
-                                quantity: BigInt(1)
+                                quantity: BigInt(quantity) // Use the quantity from the input
                             })
                         )}
                         onTransactionConfirmed={() => {
@@ -77,24 +93,25 @@ export const Staking = () => {
                             getOwnedNFTs();
                         }}
                         style={{
-
                             backgroundColor: "transparent",
                             color: "#C2AC58",
                             padding: "10px 20px",
                             borderRadius: "10px",
                             cursor: `url('/curs.png'), pointer`,
                         }}
-                    > <div className={styles.Button}>CLAIM DWELLER</div></TransactionButton>
+                    >
+                        <div className={styles.Button}>CLAIM DWELLER</div>
+                    </TransactionButton>
                 </div>
 
-                <hr className={styles.finalDivider}/>
+                <hr className={styles.finalDivider} />
 
-                <div style={{ 
+                <div style={{
                     margin: "20px 0",
                     width: "100%"
                 }}>
-                     <h2 className={styles.Regulartxt}>DWELLERS</h2>
-                     <div className={styles.nftCardContainer}>
+                    <h2 className={styles.Regulartxt}>DWELLERS</h2>
+                    <div className={styles.nftCardContainer}>
                         {ownedNFTs && ownedNFTs.length > 0 ? (
                             ownedNFTs.map((nft) => (
                                 <NFTCard
@@ -106,17 +123,17 @@ export const Staking = () => {
                             ))
                         ) : (
                             <div>
-                            <p className={styles.Regulartxt}>You own 0 Dwellers</p>
+                                <p className={styles.Regulartxt}>You own 0 Dwellers</p>
                             </div>
                         )}
                     </div>
                 </div>
 
-                <hr className={styles.finalDivider}/>
+                <hr className={styles.finalDivider} />
 
-<div style={{ width: "100%", margin: "20px 0" }}>
+                <div style={{ width: "100%", margin: "20px 0" }}>
                     <h2 className={styles.Regulartxt}>WORKING DWELLERS</h2>
-                    <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", width: "500px"}}>
+                    <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", width: "500px" }}>
                         {stakedInfo && stakedInfo[0].length > 0 ? (
                             stakedInfo[0].map((nft: any, index: number) => (
                                 <StakedNFTCard
@@ -128,13 +145,13 @@ export const Staking = () => {
                             ))
                         ) : (
                             <div>
-                            <p className={styles.Regulartxt}>No Dwellers Employed</p>
+                                <p className={styles.Regulartxt}>No Dwellers Employed</p>
                             </div>
                         )}
                     </div>
                 </div>
-                <hr className={styles.finalDivider}/>
-                <StakeRewards />  
+                <hr className={styles.finalDivider} />
+                <StakeRewards />
             </div>
         );
     }
