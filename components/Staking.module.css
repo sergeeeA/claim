@@ -3,6 +3,13 @@
     src: url('../public/monofonto rg.otf') format('opentype');
     font-weight: 100; /* Define default font-weight if needed */
 }
+.parent {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Adjust this based on your layout */
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -13,7 +20,6 @@
     padding: 20px;
     border: 2px solid #c2ad587e;
     cursor: url('../public/curs.png'), auto;
-    
 }
 .staked {
     color: #C2AC58; /* Base text color */
@@ -81,12 +87,56 @@
     display: flex;
     align-items: center;
 }
-
-.Regulartxt {
+.Titletxt {
+    position: relative;
     color: #C2AC58;
-    font-weight: 150;
-    font-family: 'Monofonto', sans-serif; 
-    
+    padding: 5px;
+    margin: 10px;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: 'Monofonto', sans-serif;
+
+    display: inline-block; /* Ensure the element fits the text */
+    overflow: hidden; /* Hide overflow for loading effect */
+}
+
+.Titletxt::before {
+    content: '';
+    position: absolute;
+    right: 2.5px;
+    top: -100%; /* Start off-screen to the left */
+    width: 100%; /* Full width of the element */
+    height: 100%;
+    background: linear-gradient(to bottom, #c2ad5800, #c2ad5828,#c2ad5881, #C2AC58, #c2ad5881, #c2ad5828, #c2ad5800); /* Color of the loading bar */
+    animation: loadingBar 2s cubic-bezier(0.1, 0.2, 0.1, 1) infinite;
+}
+
+@keyframes loadingBar {
+    0% {
+        
+        top: -100%; /* Start from the left */
+    }
+    50% {
+        top: 100%; /* Move to the right, off-screen */
+
+    }
+    100% {
+        top: -100%; /* Reset back to the left */
+
+    }
+}
+.Regulartxt {
+    margin: 5px;
+    color: #C2AC58;
+    font-size: 15px;
+    font-weight: thick;
+    font-family: 'Monofonto', sans-serif;  
+}
+.MintDetail {
+    color: #C2AC58;
+    font-size: 15px;
+    font-weight: 100;
+    font-family: 'Monofonto', sans-serif;  
 }
 .valuetxt {
     color: #ffffff;
@@ -132,6 +182,7 @@
 
 .inputQuantity {
     width: 60px;  /* Width of the input */
+    margin-left: 10px; 
     margin-right: 10px;  /* Spacing to the right */
     border-radius: 5px;  /* Rounded corners */
     padding: 5px;  /* Inner padding */
@@ -147,9 +198,11 @@
 
 .inputQuantity:focus {
     outline: none;  /* Remove default outline */
-    border: 2px solid #C2AC58;
+    border: 1px solid #C2AC58;
     color: #C2AC58;  /* Change border color on focus */
+    
 }
+
 
 .buttoninput {
     background-color: #c2ad5800;  /* Button background color */
@@ -159,19 +212,23 @@
     padding: 5px 10px;  /* Padding */
     cursor: pointer;  /* Pointer cursor on hover */
     font-family: 'Monofonto', sans-serif;  /* Font family */
-    margin: 0 5px;  /* Spacing between buttons and input */
+    margin:  5px;  /* Spacing between buttons and input */
+    cursor: url('../public/curs.png'), auto;
 }
 
 .buttoninput:hover {
     background-color: #C2AC58; 
     color: #000000;  /* Change color on hover */
     animation: flicker 0.1s; 
+    
+
 }
 
 .inputQuantity {
     -moz-appearance: textfield; /* Firefox */
     -webkit-appearance: none; /* Safari and Chrome */
     appearance: none; /* Standard */
+    cursor: url('../public/curs.png'), auto;
 }
 
 

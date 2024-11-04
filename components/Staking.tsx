@@ -8,7 +8,7 @@ import { NFT_CONTRACT, STAKING_CONTRACT } from "../utils/contracts";
 import { NFT } from "thirdweb";
 import { useEffect, useState } from "react";
 import { claimTo, getNFTs, ownerOf, totalSupply } from "thirdweb/extensions/erc721";
-import { NFTCard } from "./NFTCard";
+
 import { StakedNFTCard } from "./StakedNFTCard";
 import styles from './Staking.module.css'; // Import the CSS module
 
@@ -57,8 +57,22 @@ export const Staking = () => {
 
     if (account) {
         return (
+        <div className={styles.parent}>
             <div className={styles.container}>
+            <h2 className={styles.Titletxt}>MINT DETAILS</h2>
+       
+
+                <p className={styles.Regulartxt}>PHASE: TESTNET CLAIM ( SOON )</p>
+
+          <p className={styles.Regulartxt}>MAX MINT: 5 NFTs
+          </p>
+          <p className={styles.Regulartxt}>MINT COST: 5 BERA
+          </p>
+          <p className={styles.Regulartxt}>DURATION: 1 WEEK
+          </p>
+                
                 <hr className={styles.divider} />
+      
                 <div className={styles.headerContainer}>
                     <h2 className={styles.Regulartxt}>RECRUIT DWELLERS</h2>
                     <button
@@ -94,9 +108,7 @@ export const Staking = () => {
                         }}
                         style={{
                             backgroundColor: "transparent",
-                            color: "#C2AC58",
-                            padding: "10px 20px",
-                            borderRadius: "10px",
+
                             cursor: `url('/curs.png'), pointer`,
                         }}
                     >
@@ -110,49 +122,38 @@ export const Staking = () => {
                     margin: "20px 0",
                     width: "100%"
                 }}>
-                    <h2 className={styles.Regulartxt}>DWELLERS</h2>
-                    <div className={styles.nftCardContainer}>
-                        {ownedNFTs && ownedNFTs.length > 0 ? (
-                            ownedNFTs.map((nft) => (
-                                <NFTCard
-                                    key={nft.id}
-                                    nft={nft}
-                                    refetch={getOwnedNFTs}
-                                    refecthStakedInfo={refetchStakedInfo}
-                                />
-                            ))
-                        ) : (
-                            <div>
-                                <p className={styles.Regulartxt}>You own 0 Dwellers</p>
-                            </div>
-                        )}
-                    </div>
+                    <h2 className={styles.Regulartxt}>WHAT ARE BERA DWELLERS?</h2>
+       
+                     <p className={styles.Regulartxt}>Bera Dwellers are your wallets coolest inhabitants! 
+                        Theyre not just cute; theyre super valuable! 
+                        These little helpers can work, earning points and tokens to keep your wallet thriving. 
+                        
+                        
+                        </p>
+          
+                        <h2 className={styles.Regulartxt}>WHAT ARE ITS UTILITIES?</h2>
+       
+                    <p className={styles.Regulartxt}>Currently, you can wager your Bera Dwellers in our 
+                        New Beras Decentralised Application to partcipate in our upcoming Competition. 
+                        Staking and Gaming soon!
+                        
+                        
+                        </p>
+                        <h2 className={styles.Regulartxt}>WHERE ARE MY BERA DWELLERS?</h2>
+       
+       <p className={styles.Regulartxt}>You can see your Bera Dwellers in our 
+        New Beras Decentralised Application. Under the "STATS" tab. You can see its Attributes and Image.
+           
+           
+           </p>
                 </div>
 
-                <hr className={styles.finalDivider} />
 
-                <div style={{ width: "100%", margin: "20px 0" }}>
-                    <h2 className={styles.Regulartxt}>WORKING DWELLERS</h2>
-                    <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", width: "500px" }}>
-                        {stakedInfo && stakedInfo[0].length > 0 ? (
-                            stakedInfo[0].map((nft: any, index: number) => (
-                                <StakedNFTCard
-                                    key={index}
-                                    tokenId={nft}
-                                    refetchStakedInfo={refetchStakedInfo}
-                                    refetchOwnedNFTs={getOwnedNFTs}
-                                />
-                            ))
-                        ) : (
-                            <div>
-                                <p className={styles.Regulartxt}>No Dwellers Employed</p>
-                            </div>
-                        )}
-                    </div>
-                </div>
-                <hr className={styles.finalDivider} />
-                <StakeRewards />
+
+                        
             </div>
+         </div> 
         );
     }
 };
+                /*<StakeRewards />*/
