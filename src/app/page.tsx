@@ -28,9 +28,17 @@ export default function Home() {
         margin: "20px auto",
         width: "500px",
         borderRadius: "5px",
-        overflow: "hidden", // Ensures content within rounded corners is clipped
+   
+        position: "relative", 
       }}>
-        <div style={{ position: "fixed", padding: "10px", zIndex: 1000 }}>
+         <div style={{
+          position: "absolute", // Keeps it fixed in a certain area, but won't overlap content
+          top: 10, // Gives a bit of space from the top
+          left: "50%",
+          transform: "translateX(-50%)", // Centers the button horizontally
+          zIndex: 1000, // Ensures button is above other content
+          padding: "10px",
+        }}>
         <ThirdwebProvider>
       <ConnectButton
         client={client}
@@ -80,7 +88,13 @@ export default function Home() {
 
 
         
-        <Staking />
+        <div style={{
+          marginTop: "90px", // Adds some space below the fixed ConnectButton
+          zIndex: 1, 
+        
+        }}>
+          <Staking />
+        </div>
 
       </div>
     </>

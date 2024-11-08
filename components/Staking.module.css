@@ -1,13 +1,16 @@
 @font-face {
     font-family: 'Monofonto';
     src: url('../public/monofonto rg.otf') format('opentype');
-    font-weight: 100; /* Define default font-weight if needed */
+    font-weight: 100;
 }
 .parent {
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    height: 100vh; /* Adjust this based on your layout */
+    justify-content: center; 
+    align-items: center; 
+    height: 100%; 
+    overflow: auto;
+    border: 2px solid #c2ad587e;
+    border-radius: 8px;
 }
 
 .container {
@@ -15,14 +18,16 @@
     flex-direction: column;
     align-items: center;
     background-color: #c2ad5850;
-    border-radius: 8px;
-    width: 500px;
-    padding: 20px;
-    border: 2px solid #c2ad587e;
+
+    margin: auto;
+    padding: 2vh;
+  
     cursor: url('../public/curs.png'), auto;
+    width: 100%;
+   
 }
 .staked {
-    color: #C2AC58; /* Base text color */
+    color: #C2AC58; /* boase text color */
     margin: "10px"
 }
 
@@ -39,6 +44,7 @@
     justify-content: space-between;
     margin: 20px 0;
     width: 100%;
+    overflow: auto;
 }
 
 
@@ -134,7 +140,7 @@
 }
 .MintDetail {
     color: #C2AC58;
-    font-size: 15px;
+    font-size: 10px;
     font-weight: 100;
     font-family: 'Monofonto', sans-serif;  
 }
@@ -185,7 +191,7 @@
     margin-left: 10px; 
     margin-right: 10px;  /* Spacing to the right */
     border-radius: 5px;  /* Rounded corners */
-    padding: 5px;  /* Inner padding */
+    padding: 1vh;  /* Inner padding */
     border: 4px solid #C2AC58;  /* Border color */
     background-color: transparent;  /* Background color */
     
@@ -209,7 +215,7 @@
     color: #C2AC58;  /* Button text color */
     border: none;  /* No border */
     border-radius: 5px;  /* Rounded corners */
-    padding: 5px 10px;  /* Padding */
+    padding: 1vh 1vh;  /* Padding */
     cursor: pointer;  /* Pointer cursor on hover */
     font-family: 'Monofonto', sans-serif;  /* Font family */
     margin:  5px;  /* Spacing between buttons and input */

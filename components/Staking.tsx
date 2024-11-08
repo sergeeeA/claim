@@ -64,7 +64,7 @@ export const Staking = () => {
 
                 <p className={styles.Regulartxt}>PHASE: TESTNET CLAIM ( SOON )</p>
 
-          <p className={styles.Regulartxt}>MAX MINT: 5 NFTs
+          <p className={styles.Regulartxt}>MAX MINT: 4 NFTs
           </p>
           <p className={styles.Regulartxt}>MINT COST: 5 BERA
           </p>
@@ -124,7 +124,7 @@ export const Staking = () => {
                 }}>
                     <h2 className={styles.Regulartxt}>WHAT ARE BERA DWELLERS?</h2>
        
-                     <p className={styles.Regulartxt}>Bera Dwellers are your wallets coolest inhabitants! 
+                     <p className={styles.MintDetail}>Bera Dwellers are your wallets coolest inhabitants! 
                         Theyre not just cute; theyre super valuable! 
                         These little helpers can work, earning points and tokens to keep your wallet thriving. 
                         
@@ -133,7 +133,7 @@ export const Staking = () => {
           
                         <h2 className={styles.Regulartxt}>WHAT ARE ITS UTILITIES?</h2>
        
-                    <p className={styles.Regulartxt}>Currently, you can wager your Bera Dwellers in our 
+                    <p className={styles.MintDetail}>Currently, you can wager your Bera Dwellers in our 
                         New Beras Decentralised Application to partcipate in our upcoming Competition. 
                         Staking and Gaming soon!
                         
@@ -141,7 +141,7 @@ export const Staking = () => {
                         </p>
                         <h2 className={styles.Regulartxt}>WHERE ARE MY BERA DWELLERS?</h2>
        
-       <p className={styles.Regulartxt}>You can see your Bera Dwellers in our 
+       <p className={styles.MintDetail}>You can see your Bera Dwellers in our 
         New Beras Decentralised Application. Under the "STATS" tab. You can see its Attributes and Image.
            
            
