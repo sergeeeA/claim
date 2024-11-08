@@ -62,7 +62,7 @@ export const Staking = () => {
             <h2 className={styles.Titletxt}>MINT DETAILS</h2>
        
 
-                <p className={styles.Regulartxt}>PHASE: PRE-BERA CLAIM </p>
+                <p className={styles.Regulartxt}>PHASE: WHITELIST CLAIM </p>
 
           <p className={styles.Regulartxt}>MAX MINT: 2 NFTs
           </p>
