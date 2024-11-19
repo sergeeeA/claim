@@ -62,19 +62,19 @@ export const Staking = () => {
             <h2 className={styles.Titletxt}>MINT DETAILS</h2>
        
 
-                <p className={styles.Regulartxt}>PHASE: PUBLIC </p>
+                <p className={styles.Regulartxt}>PHASE: WHITELIST PHASE </p>
 
-          <p className={styles.Regulartxt}>MAX MINT: 4 NFTs
+          <p className={styles.Regulartxt}>MAX MINT: 5 NFTs
           </p>
-          <p className={styles.Regulartxt}>MINT COST: 5 BERA
+          <p className={styles.Regulartxt}>MINT COST: 0 BERA
           </p>
-          <p className={styles.Regulartxt}>DURATION: Until Competition
+          <p className={styles.Regulartxt}>DURATION: 2 Days
           </p>
                 
                 <hr className={styles.divider} />
       
                 <div className={styles.headerContainer}>
-                    <h2 className={styles.Regulartxt}>RECRUIT DWELLERS</h2>
+                    <h2 className={styles.Regulartxt}>RECRUIT BERA OUTLAWS</h2>
                     <button
                         className={styles.buttoninput}
                         onClick={() => setQuantity((prev) => Math.max(1, prev - 1))}  // Decrement
@@ -103,7 +103,7 @@ export const Staking = () => {
                             })
                         )}
                         onTransactionConfirmed={() => {
-                            alert("Dweller claimed!");
+                            alert("Outlaw claimed!");
                             getOwnedNFTs();
                         }}
                         style={{
@@ -112,7 +112,7 @@ export const Staking = () => {
                             cursor: `url('/curs.png'), pointer`,
                         }}
                     >
-                        <div className={styles.Button}>CLAIM DWELLER</div>
+                        <div className={styles.Button}>CLAIM NFT</div>
                     </TransactionButton>
                 </div>
 
@@ -122,27 +122,26 @@ export const Staking = () => {
                     margin: "20px 0",
                     width: "100%"
                 }}>
-                    <h2 className={styles.Regulartxt}>WHAT ARE BERA DWELLERS?</h2>
+                    <h2 className={styles.Regulartxt}>WHAT ARE BERA OUTLAWS?</h2>
        
-                     <p className={styles.MintDetail}>Bera Dwellers are your wallets coolest inhabitants! 
-                        Theyre not just cute; theyre super valuable! 
-                        These little helpers can work, earning points and tokens to keep your wallet thriving. 
+                     <p className={styles.MintDetail}>Bera Outlaws is an NFT collection with its own rarity system. The higher the token ID, the greater the rarity. 
+                        Rarity influences the chances of winning against other Beras in NFT Duels.
                         
                         
                         </p>
           
                         <h2 className={styles.Regulartxt}>WHAT ARE ITS UTILITIES?</h2>
        
-                    <p className={styles.MintDetail}>Currently, you can wager your Bera Dwellers in our 
-                        New Beras Decentralised Application to partcipate in our upcoming Competition. 
-                        Staking and Gaming soon!
+                    <p className={styles.MintDetail}>You can wager your Bera Outlaws in our 
+                        New Beras Decentralised Application to climb up in the leaderboard. 
+                     
                         
                         
                         </p>
-                        <h2 className={styles.Regulartxt}>WHERE ARE MY BERA DWELLERS?</h2>
+                        <h2 className={styles.Regulartxt}>WHERE ARE MY BERA OUTLAWS?</h2>
        
-       <p className={styles.MintDetail}>You can see your Bera Dwellers in our 
-        New Beras Decentralised Application. Under the "STATS" tab. You can see its Attributes and Image.
+       <p className={styles.MintDetail}>You can see your Bera Outlaws in our 
+        New Beras Decentralised Application. Under the "STATS" tab. You can see its Rarity and Art.
            
            
            </p>
