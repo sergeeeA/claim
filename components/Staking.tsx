@@ -62,13 +62,13 @@ export const Staking = () => {
             <h2 className={styles.Titletxt}>MINT DETAILS</h2>
        
 
-                <p className={styles.Regulartxt}>PHASE: WHITELIST PHASE </p>
+                <p className={styles.Regulartxt}>PHASE: PUBLIC ( COMMON NFTs ) PHASE </p>
 
-          <p className={styles.Regulartxt}>MAX MINT: 5 NFTs
+          <p className={styles.Regulartxt}>MAX MINT: 15 NFTs
           </p>
-          <p className={styles.Regulartxt}>MINT COST: 0 BERA
+          <p className={styles.Regulartxt}>MINT COST: 0.059 BERA
           </p>
-          <p className={styles.Regulartxt}>DURATION: 2 Days
+          <p className={styles.Regulartxt}>DURATION: 
           </p>
                 
                 <hr className={styles.divider} />
