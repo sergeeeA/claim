@@ -64,9 +64,9 @@ export const Staking = () => {
 
                 <p className={styles.Regulartxt}>PHASE: PUBLIC ( COMMON NFTs ) PHASE </p>
 
-          <p className={styles.Regulartxt}>MAX MINT: 15 NFTs
+          <p className={styles.Regulartxt}>MAX MINT: 5 NFTs
           </p>
-          <p className={styles.Regulartxt}>MINT COST: 0.059 BERA
+          <p className={styles.Regulartxt}>MINT COST: 1 BERA
           </p>
           <p className={styles.Regulartxt}>DURATION: 
           </p>
