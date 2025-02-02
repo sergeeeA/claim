@@ -62,11 +62,11 @@ export const Staking = () => {
             <h2 className={styles.Titletxt}>MINT DETAILS</h2>
        
 
-                <p className={styles.Regulartxt}>PHASE: PUBLIC ( COMMON NFTs ) PHASE </p>
+                <p className={styles.Regulartxt}>PHASE: Test PHASE </p>
 
-          <p className={styles.Regulartxt}>MAX MINT: 5 NFTs
+          <p className={styles.Regulartxt}>MAX MINT: 15 NFTs
           </p>
-          <p className={styles.Regulartxt}>MINT COST: 1 BERA
+          <p className={styles.Regulartxt}>MINT COST: 0 BERA
           </p>
           <p className={styles.Regulartxt}>DURATION: 
           </p>
@@ -74,7 +74,7 @@ export const Staking = () => {
                 <hr className={styles.divider} />
       
                 <div className={styles.headerContainer}>
-                    <h2 className={styles.Regulartxt}>RECRUIT BERA OUTLAWS</h2>
+                    <h2 className={styles.Regulartxt}>CLAIM BERA OUTLAWS</h2>
                     <button
                         className={styles.buttoninput}
                         onClick={() => setQuantity((prev) => Math.max(1, prev - 1))}  // Decrement
