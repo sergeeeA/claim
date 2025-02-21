@@ -62,19 +62,19 @@ export const Staking = () => {
             <h2 className={styles.Titletxt}>MINT DETAILS</h2>
        
 
-                <p className={styles.Regulartxt}>PHASE: PUBLIC ( COMMON NFTs ) PHASE </p>
+                <p className={styles.Regulartxt}>PHASE: FAREWELL PHASE </p>
 
-          <p className={styles.Regulartxt}>MAX MINT: 15 NFTs
+          <p className={styles.Regulartxt}>MAX MINT: 5 DACHI
           </p>
-          <p className={styles.Regulartxt}>MINT COST: 0.059 BERA
+          <p className={styles.Regulartxt}>MINT COST: 0 BERA
           </p>
-          <p className={styles.Regulartxt}>DURATION: 
+          <p className={styles.Regulartxt}>DURATION: until End of week
           </p>
                 
                 <hr className={styles.divider} />
       
                 <div className={styles.headerContainer}>
-                    <h2 className={styles.Regulartxt}>RECRUIT BERA OUTLAWS</h2>
+                    <h2 className={styles.Regulartxt}>MINT BERADACHI</h2>
                     <button
                         className={styles.buttoninput}
                         onClick={() => setQuantity((prev) => Math.max(1, prev - 1))}  // Decrement
@@ -122,29 +122,15 @@ export const Staking = () => {
                     margin: "20px 0",
                     width: "100%"
                 }}>
-                    <h2 className={styles.Regulartxt}>WHAT ARE BERA OUTLAWS?</h2>
+                    <h2 className={styles.Regulartxt}>CREATE A NEW WALLET</h2>
        
-                     <p className={styles.MintDetail}>Bera Outlaws is an NFT collection with its own rarity system. The higher the token ID, the greater the rarity. 
-                        Rarity influences the chances of winning against other Beras in NFT Duels.
-                        
-                        
-                        </p>
+
           
-                        <h2 className={styles.Regulartxt}>WHAT ARE ITS UTILITIES?</h2>
+                        <h2 className={styles.Regulartxt}>SEND 0.05 TO NEW WALLET</h2>
+
+                        <h2 className={styles.Regulartxt}>MINT FOR FREE ( no utilities )</h2>
        
-                    <p className={styles.MintDetail}>You can wager your Bera Outlaws in our 
-                        New Beras Decentralised Application to climb up in the leaderboard. 
-                     
-                        
-                        
-                        </p>
-                        <h2 className={styles.Regulartxt}>WHERE ARE MY BERA OUTLAWS?</h2>
-       
-       <p className={styles.MintDetail}>You can see your Bera Outlaws in our 
-        New Beras Decentralised Application. Under the "STATS" tab. You can see its Rarity and Art.
-           
-           
-           </p>
+
                 </div>
 
 
