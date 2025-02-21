@@ -74,7 +74,7 @@ export const Staking = () => {
                 <hr className={styles.divider} />
       
                 <div className={styles.headerContainer}>
-                    <h2 className={styles.Regulartxt}>RECRUIT BERA OUTLAWS</h2>
+                    <h2 className={styles.Regulartxt}>MINT DACHIs</h2>
                     <button
                         className={styles.buttoninput}
                         onClick={() => setQuantity((prev) => Math.max(1, prev - 1))}  // Decrement
